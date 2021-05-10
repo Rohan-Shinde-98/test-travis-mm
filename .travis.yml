@@ -1,3 +1,4 @@
 language: bash
 script:
+  - echo "hello world"
   - bash send-status.sh
