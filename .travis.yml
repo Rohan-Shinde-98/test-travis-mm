@@ -14,8 +14,8 @@ jobs:
    - <<: *test
      name: demo ppc64le
      arch: ppc64le
-   - <: *test
-    name: demo s390x
-      arch: s390x
+   - <<: *test
+     name: demo s390x
+     arch: s390x
       
 
