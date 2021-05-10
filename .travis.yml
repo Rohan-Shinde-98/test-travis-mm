@@ -2,6 +2,8 @@ language: bash
 os: linux
 arch: 
   - ppc64le  
+  - s390x
+  - amd64
   
 jobs:
   include:
