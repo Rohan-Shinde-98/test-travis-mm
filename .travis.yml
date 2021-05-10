@@ -1,3 +1,3 @@
 language: bash
 script:
-  - echo "Hello World"
+  - curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "hello world"}' https://test-mm.cloud.mattermost.com/hooks/hpwmkw869iyb5fa5sk8rbimkny
