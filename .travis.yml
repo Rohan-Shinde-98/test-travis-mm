@@ -2,11 +2,14 @@ language: bash
 os: linux
 arch: 
   - ppc64le
-
+  - amd64
+  - s390x
+  
+  
 jobs:
   include:
-    - &test
-      stage: Send Msgs
+   - &test
+     stage: Send Msgs
       script:
         - curl -i -X POST --data-urlencode 'payload={"text": "$TRAVIS_JOB_ID"}' $MM_WEBHOOK_URL
       name: demo amd64
@@ -18,3 +21,4 @@ jobs:
       name: demo s390x
       arch: s390x
       
+
