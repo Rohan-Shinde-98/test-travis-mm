@@ -10,7 +10,7 @@ jobs:
    - &test
      stage: Send Msgs
      script:
-       - curl -i -X POST --data-urlencode 'payload={"text": "$TRAVIS_JOB_ID"}' $MM_WEBHOOK_URL
+       -  curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "$TRAVIS_JOB_ID"}' $MM_WEBHOOK_URL
      name: demo amd64
      arch: amd64
    - <<: *test
@@ -19,5 +19,3 @@ jobs:
    - <<: *test
      name: demo s390x
      arch: s390x
-      
-
