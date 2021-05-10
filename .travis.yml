@@ -4,20 +4,8 @@ arch:
   - ppc64le  
   - s390x
   - amd64
-  
-jobs:
-  include:
-   - &test
-     stage: Send Msgs
-     script:
-       -  curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "hello world"}' https://test-mm.cloud.mattermost.com/hooks/hpwmkw869iyb5fa5sk8rbimkny
-     name: demo amd64
-     arch: amd64
-   - <<: *test
-     name: demo ppc64le
-     arch: ppc64le
-   - <<: *test
-     name: demo s390x
-     arch: s390x
+script:
+  -  curl -i -X POST -H 'Content-Type: application/json' -d '{"text": "hello world"}' https://test-mm.cloud.mattermost.com/hooks/hpwmkw869iyb5fa5sk8rbimkny
+
       
 
